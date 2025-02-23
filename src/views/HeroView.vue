@@ -73,8 +73,8 @@
 </template>
 
 <script>
-import NavbarComponent from "./NavbarComponent.vue";
-import BestItemComponent from "./BestItemComponent.vue";
+import NavbarComponent from "../components/NavbarComponent.vue";
+import BestItemComponent from "../components/BestItemComponent.vue";
 
 export default { components: { NavbarComponent, BestItemComponent } };
 </script>
