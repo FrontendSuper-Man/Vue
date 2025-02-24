@@ -87,5 +87,55 @@
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
 
-export default { components: { NavbarComponent, BestItemComponent } };
+export default {
+  data() {
+    return {
+      links: [
+        {
+          id: 0,
+          text: "Solimo Coffee Beans 2kg",
+          jpg: "coffee-1.jpg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 1,
+          text: "Presto Coffee Beans 1kg",
+          jpg: "coffee-2.jpg",
+          country: "Brazil",
+          price: "15.99$",
+        },
+        {
+          id: 2,
+          text: "AROMISTICO Coffee 1kg",
+          jpg: "coffee-3.jpg",
+          country: "Brazil",
+          price: "6.99$",
+        },
+        {
+          id: 3,
+          text: "Solimo Coffee Beans 2kg",
+          jpg: "coffee-3.jpg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 4,
+          text: "Solimo Coffee Beans 2kg",
+          jpg: "coffee-3.jpg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 5,
+          text: "Solimo Coffee Beans 2kg",
+          jpg: "coffee-3.jpg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+      ],
+    };
+  },
+  components: { NavbarComponent, BestItemComponent },
+};
 </script>

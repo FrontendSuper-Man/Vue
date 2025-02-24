@@ -7,6 +7,7 @@
             <NavbarComponent></NavbarComponent>
           </div>
         </div>
+
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <h1 class="title-big">Everything You Love About Coffee</h1>
@@ -76,5 +77,28 @@
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
 
-export default { components: { NavbarComponent, BestItemComponent } };
+export default {
+  data() {
+    return {
+      links: [
+        {
+          id: 0,
+          text: "Solimo Coffee Beans 2kg",
+          jpg: "coffee-1.jpg",
+        },
+        {
+          id: 1,
+          text: "Presto Coffee Beans 1kg",
+          jpg: "coffee-2.jpg",
+        },
+        {
+          id: 2,
+          text: "AROMISTICO Coffee 1kg",
+          jpg: "coffee-3.jpg",
+        },
+      ],
+    };
+  },
+  components: { NavbarComponent, BestItemComponent },
+};
 </script>

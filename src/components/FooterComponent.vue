@@ -5,18 +5,21 @@
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
             <li class="footer__item">
-              <a href="./index.html">
-                <img src="@/assets/logo/Logo_black.svg" alt="logo" />
-              </a>
+              <RouterLink :to="links[0].link">
+                <img
+                  :src="require(`@/assets/logo/${links[0].icon}`)"
+                  alt="logo"
+                />
+              </RouterLink>
             </li>
             <li class="footer__item">
-              <a href="./coffeepage.html">Our coffee</a>
+              <RouterLink :to="links[1].link"> {{ links[1].text }} </RouterLink>
             </li>
             <li class="footer__item">
-              <a href="./goodspage.html">For your pleasure</a>
+              <RouterLink :to="links[2].link"> {{ links[2].text }} </RouterLink>
             </li>
             <li class="footer__item">
-              <a href="./contacts.html">Contact us</a>
+              <RouterLink :to="links[3].link"> {{ links[3].text }} </RouterLink>
             </li>
           </ul>
         </div>
@@ -29,3 +32,34 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          id: 0,
+          link: "/",
+          icon: "Logo_black.svg",
+        },
+        {
+          id: 1,
+          text: "Our coffee",
+          link: "/our-coffee",
+        },
+        {
+          id: 2,
+          text: "For your pleasure",
+          link: "/goodspage",
+        },
+        {
+          id: 3,
+          text: "Contact us",
+          link: "/contacts",
+        },
+      ],
+    };
+  },
+};
+</script>
