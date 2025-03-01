@@ -12,7 +12,7 @@
                 />
               </RouterLink>
             </li>
-            <li class="footer__item">
+            <!-- <li class="footer__item">
               <RouterLink :to="links[1].link"> {{ links[1].text }} </RouterLink>
             </li>
             <li class="footer__item">
@@ -20,7 +20,23 @@
             </li>
             <li class="footer__item">
               <RouterLink :to="links[3].link"> {{ links[3].text }} </RouterLink>
-            </li>
+            </li> -->
+
+            <LiItemComponent
+              :text="links[1].text"
+              :link="links[1].link"
+              classItem="footer__item"
+            />
+            <LiItemComponent
+              :text="links[2].text"
+              :link="links[2].link"
+              classItem="footer__item"
+            />
+            <LiItemComponent
+              :text="links[3].text"
+              :link="links[3].link"
+              classItem="footer__item"
+            />
           </ul>
         </div>
       </div>
@@ -34,6 +50,8 @@
 </template>
 
 <script>
+import LiItemComponent from "./LiItemComponent.vue";
+
 export default {
   data() {
     return {
@@ -61,5 +79,6 @@ export default {
       ],
     };
   },
+  components: { LiItemComponent },
 };
 </script>

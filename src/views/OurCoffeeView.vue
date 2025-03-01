@@ -7,7 +7,7 @@
             <NavbarComponent></NavbarComponent>
           </div>
         </div>
-        <h1 class="title-big">Our Coffee</h1>
+        <PageTitleComponent classItem="title-big" text="Our Coffee" />
       </div>
     </div>
     <section class="shop">
@@ -69,12 +69,42 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <BestItemComponent />
-              <BestItemComponent />
-              <BestItemComponent />
-              <BestItemComponent />
-              <BestItemComponent />
-              <BestItemComponent />
+              <BestItemComponent
+                classItem="shop__item"
+                :name="coffee[0].name"
+                :price="coffee[0].price"
+                :img="coffee[0].img"
+              />
+              <BestItemComponent
+                classItem="shop__item"
+                :name="coffee[1].name"
+                :price="coffee[1].price"
+                :img="coffee[1].img"
+              />
+              <BestItemComponent
+                classItem="shop__item"
+                :name="coffee[2].name"
+                :price="coffee[2].price"
+                :img="coffee[2].img"
+              />
+              <BestItemComponent
+                classItem="shop__item"
+                :name="coffee[3].name"
+                :price="coffee[3].price"
+                :img="coffee[3].img"
+              />
+              <BestItemComponent
+                classItem="shop__item"
+                :name="coffee[4].name"
+                :price="coffee[4].price"
+                :img="coffee[4].img"
+              />
+              <BestItemComponent
+                classItem="shop__item"
+                :name="coffee[5].name"
+                :price="coffee[5].price"
+                :img="coffee[5].img"
+              />
             </div>
           </div>
         </div>
@@ -86,56 +116,57 @@
 <script>
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
+import PageTitleComponent from "../components/PageTitleComponent.vue";
 
 export default {
   data() {
     return {
-      links: [
+      coffee: [
         {
           id: 0,
-          text: "Solimo Coffee Beans 2kg",
-          jpg: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          img: "coffee-1.jpg",
           country: "Brazil",
           price: "10.73$",
         },
         {
           id: 1,
-          text: "Presto Coffee Beans 1kg",
-          jpg: "coffee-2.jpg",
+          name: "Presto Coffee Beans 1kg",
+          img: "coffee-2.jpg",
           country: "Brazil",
           price: "15.99$",
         },
         {
           id: 2,
-          text: "AROMISTICO Coffee 1kg",
-          jpg: "coffee-3.jpg",
+          name: "AROMISTICO Coffee 1kg",
+          img: "coffee-3.jpg",
           country: "Brazil",
           price: "6.99$",
         },
         {
           id: 3,
-          text: "Solimo Coffee Beans 2kg",
-          jpg: "coffee-3.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          img: "coffee-3.jpg",
           country: "Brazil",
           price: "10.73$",
         },
         {
           id: 4,
-          text: "Solimo Coffee Beans 2kg",
-          jpg: "coffee-3.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          img: "coffee-3.jpg",
           country: "Brazil",
           price: "10.73$",
         },
         {
           id: 5,
-          text: "Solimo Coffee Beans 2kg",
-          jpg: "coffee-3.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          img: "coffee-3.jpg",
           country: "Brazil",
           price: "10.73$",
         },
       ],
     };
   },
-  components: { NavbarComponent, BestItemComponent },
+  components: { NavbarComponent, BestItemComponent, PageTitleComponent },
 };
 </script>
