@@ -66,22 +66,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
               <BestItemComponent
+                v-for="seller in bestsellers"
+                :key="seller.id"
+                :name="seller.name"
+                :price="seller.price"
+                :img="seller.img"
                 classItem="best__item"
-                :name="bestsellers[0].name"
-                :price="bestsellers[0].price"
-                :img="bestsellers[0].img"
-              />
-              <BestItemComponent
-                classItem="best__item"
-                :name="bestsellers[1].name"
-                :price="bestsellers[1].price"
-                :img="bestsellers[1].img"
-              />
-              <BestItemComponent
-                classItem="best__item"
-                :name="bestsellers[2].name"
-                :price="bestsellers[2].price"
-                :img="bestsellers[2].img"
               />
             </div>
           </div>
@@ -92,28 +82,30 @@
 </template>
 
 <script>
+import { v4 as uuidv4 } from "uuid";
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
 import PageTitleComponent from "../components/PageTitleComponent.vue";
 
 export default {
+  components: { NavbarComponent, BestItemComponent, PageTitleComponent },
   data() {
     return {
       bestsellers: [
         {
-          id: 0,
+          id: uuidv4(),
           name: "Solimo Coffee Beans 2kg",
           price: 10.73,
           img: "coffee-1.jpg",
         },
         {
-          id: 1,
+          id: uuidv4(),
           name: "Presto Coffee Beans 1kg",
           price: 15.99,
           img: "coffee-2.jpg",
         },
         {
-          id: 2,
+          id: uuidv4(),
           name: "AROMISTICO Coffee 1kg",
           price: 6.99,
           img: "coffee-3.jpg",
@@ -121,6 +113,5 @@ export default {
       ],
     };
   },
-  components: { NavbarComponent, BestItemComponent, PageTitleComponent },
 };
 </script>

@@ -49,40 +49,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <BestItemComponent
+                v-for="good in goods"
+                :key="good.id"
+                :name="good.name"
+                :img="good.img"
+                :price="good.price"
                 classItem="shop__item"
-                :name="goods[0].name"
-                :img="goods[0].img"
-                :price="goods[0].price"
-              />
-              <BestItemComponent
-                classItem="shop__item"
-                :name="goods[1].name"
-                :img="goods[1].img"
-                :price="goods[1].price"
-              />
-              <BestItemComponent
-                classItem="shop__item"
-                :name="goods[2].name"
-                :img="goods[2].img"
-                :price="goods[2].price"
-              />
-              <BestItemComponent
-                classItem="shop__item"
-                :name="goods[3].name"
-                :img="goods[3].img"
-                :price="goods[3].price"
-              />
-              <BestItemComponent
-                classItem="shop__item"
-                :name="goods[4].name"
-                :img="goods[4].img"
-                :price="goods[4].price"
-              />
-              <BestItemComponent
-                classItem="shop__item"
-                :name="goods[5].name"
-                :img="goods[5].img"
-                :price="goods[5].price"
               />
             </div>
           </div>
@@ -93,6 +65,7 @@
 </template>
 
 <script>
+import { v4 as uuidv4 } from "uuid";
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
 import PageTitleComponent from "../components/PageTitleComponent.vue";
@@ -102,46 +75,40 @@ export default {
     return {
       goods: [
         {
-          id: 0,
+          id: uuidv4(),
           name: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           img: "good-1.jpg",
-          country: "Brazil",
         },
         {
-          id: 1,
+          id: uuidv4(),
           name: "Presto Coffee Beans 1kg",
-          price: "15.99$",
+          price: 15.99,
           img: "good-1.jpg",
-          country: "Brazil",
         },
         {
-          id: 2,
+          id: uuidv4(),
           name: "AROMISTICO Coffee 1kg",
-          price: "6.99$",
+          price: 6.99,
           img: "good-1.jpg",
-          country: "Brazil",
         },
         {
-          id: 3,
+          id: uuidv4(),
           name: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           img: "good-1.jpg",
-          country: "Brazil",
         },
         {
-          id: 4,
+          id: uuidv4(),
           name: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           img: "good-1.jpg",
-          country: "Brazil",
         },
         {
-          id: 5,
+          id: uuidv4(),
           name: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           img: "good-1.jpg",
-          country: "Brazil",
         },
       ],
     };
