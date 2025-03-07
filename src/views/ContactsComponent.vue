@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <main>
     <div class="banner contactspage-banner">
@@ -79,6 +80,7 @@
                 </div>
                 <div class="col col-12">
                   <textarea
+                    :v-model="form.messageValue"
                     class="form-control"
                     name="message"
                     id="message"
@@ -113,12 +115,14 @@ export default {
         inputValue: "",
         emailValue: "",
         phoneValue: null,
+        messageValue: "",
       },
     };
   },
   methods: {
-    submit(event) {
-      console.log(event.target);
+    submit() {
+      // eslint-disable-next-line
+      console.log(this.form);
     },
   },
   components: { NavbarComponent },

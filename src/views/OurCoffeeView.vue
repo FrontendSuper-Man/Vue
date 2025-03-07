@@ -86,54 +86,16 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from "uuid";
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
 import PageTitleComponent from "../components/PageTitleComponent.vue";
 
 export default {
-  data() {
-    return {
-      coffees: [
-        {
-          id: uuidv4(),
-          name: "Solimo Coffee Beans 2kg",
-          img: "coffee-1.jpg",
-          price: "10.73$",
-        },
-        {
-          id: uuidv4(),
-          name: "Presto Coffee Beans 1kg",
-          img: "coffee-2.jpg",
-          price: "15.99$",
-        },
-        {
-          id: uuidv4(),
-          name: "AROMISTICO Coffee 1kg",
-          img: "coffee-3.jpg",
-          price: "6.99$",
-        },
-        {
-          id: uuidv4(),
-          name: "Solimo Coffee Beans 2kg",
-          img: "coffee-3.jpg",
-          price: "10.73$",
-        },
-        {
-          id: uuidv4(),
-          name: "Solimo Coffee Beans 2kg",
-          img: "coffee-3.jpg",
-          price: "10.73$",
-        },
-        {
-          id: uuidv4(),
-          name: "Solimo Coffee Beans 2kg",
-          img: "coffee-3.jpg",
-          price: "10.73$",
-        },
-      ],
-    };
-  },
   components: { NavbarComponent, BestItemComponent, PageTitleComponent },
+  computed: {
+    coffees() {
+      return this.$store.getters.getItem.coffees;
+    },
+  },
 };
 </script>
