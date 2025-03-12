@@ -159,7 +159,6 @@ export default {
         this.phoneValue = null;
         this.messageValue = "";
         this.v$.$reset();
-        alert("Форма успешно отправлена");
       }
     },
   },

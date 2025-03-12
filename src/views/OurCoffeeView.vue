@@ -92,16 +92,24 @@ import navigateMixin from "../mixins/navigate";
 
 export default {
   components: { NavbarComponent, BestItemComponent, PageTitleComponent },
-  computed: {
-    coffees() {
-      return this.$store.getters.getCoffee;
-    },
-  },
+  mixins: [navigateMixin],
   data() {
     return {
       name: "coffee",
     };
   },
-  mixins: [navigateMixin],
+  mounted() {
+    fetch("http://localhost:3000/coffee")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        this.$store.dispatch("setCoffeeData", data);
+      });
+  },
+  computed: {
+    coffees() {
+      return this.$store.getters.getCoffee;
+    },
+  },
 };
 </script>

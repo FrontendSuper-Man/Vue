@@ -1,25 +1,18 @@
 const bestSellers = {
   state: {
-    bestsellers: [
-      {
-        id: "1",
-        name: "Solimo Coffee Beans 2kg",
-        price: 10.73,
-        img: "coffee-1.jpg",
-      },
-      {
-        id: "2",
-        name: "Presto Coffee Beans 1kg",
-        price: 15.99,
-        img: "coffee-2.jpg",
-      },
-      {
-        id: "3",
-        name: "AROMISTICO Coffee 1kg",
-        price: 6.99,
-        img: "coffee-3.jpg",
-      },
-    ],
+    bestsellers: [],
+  },
+  mutations: {
+    setSellersData(state, data) {
+      /* eslint-disable no-param-reassign */
+      state.bestsellers = data;
+      /* eslint-enable no-param-reassign */
+    },
+  },
+  actions: {
+    setSellersData({ commit }, data) {
+      commit("setSellersData", data);
+    },
   },
   getters: {
     getBestSellers(state) {

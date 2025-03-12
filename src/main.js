@@ -8,3 +8,4 @@ const app = createApp(App);
 app.use(router);
 app.use(store);
 app.mount("#app");
+// npm install json-server --save-dev в случае если json server не будет работать

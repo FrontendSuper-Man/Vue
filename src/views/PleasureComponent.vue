@@ -71,16 +71,24 @@ import navigateMixin from "../mixins/navigate";
 
 export default {
   components: { NavbarComponent, BestItemComponent, PageTitleComponent },
-  computed: {
-    goods() {
-      return this.$store.getters.getGoods;
-    },
-  },
   data() {
     return {
       name: "goods",
     };
   },
   mixins: [navigateMixin],
+  mounted() {
+    fetch("http://localhost:3000/goods")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        this.$store.dispatch("setGoodsData", data);
+      });
+  },
+  computed: {
+    goods() {
+      return this.$store.getters.getGoods;
+    },
+  },
 };
 </script>

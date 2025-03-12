@@ -101,16 +101,24 @@ export default {
       });
     },
   },
+  data() {
+    return {
+      name: "bestsellers",
+    };
+  },
+  mixins: [navigateMixin],
+  mounted() {
+    fetch("http://localhost:3000/bestsellers")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        this.$store.dispatch("setSellersData", data);
+      });
+  },
   computed: {
     bestsellers() {
       return this.$store.getters.getBestSellers;
     },
   },
-  data() {
-    return {
-      name: "hero",
-    };
-  },
-  mixins: [navigateMixin],
 };
 </script>
