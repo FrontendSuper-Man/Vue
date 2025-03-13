@@ -51,10 +51,9 @@
               <BestItemComponent
                 v-for="good in goods"
                 :key="good.id"
-                :name="good.name"
-                :img="good.img"
-                :price="good.price"
+                :card="good"
                 classItem="shop__item"
+                @onNavigate="navigate"
               />
             </div>
           </div>
@@ -68,13 +67,20 @@
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
 import PageTitleComponent from "../components/PageTitleComponent.vue";
+import navigateMixin from "../mixins/navigate";
 
 export default {
   components: { NavbarComponent, BestItemComponent, PageTitleComponent },
   computed: {
     goods() {
-      return this.$store.getters.getItem.goods;
+      return this.$store.getters.getGoods;
     },
   },
+  data() {
+    return {
+      name: "goods",
+    };
+  },
+  mixins: [navigateMixin],
 };
 </script>

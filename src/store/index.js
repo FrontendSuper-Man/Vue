@@ -1,11 +1,15 @@
 import { createStore } from "vuex";
 import links from "./links";
-import items from "./items";
+import goods from "./goods";
+import bestSellers from "./bestsellers";
+import coffee from "./coffee";
 
 const store = createStore({
   modules: {
     links,
-    items,
+    goods,
+    bestSellers,
+    coffee,
   },
 });
 

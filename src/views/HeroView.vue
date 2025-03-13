@@ -73,10 +73,9 @@
               <BestItemComponent
                 v-for="seller in bestsellers"
                 :key="seller.id"
-                :name="seller.name"
-                :price="seller.price"
-                :img="seller.img"
+                :card="seller"
                 classItem="best__item"
+                @onNavigate="navigate"
               />
             </div>
           </div>
@@ -90,6 +89,7 @@
 import NavbarComponent from "../components/NavbarComponent.vue";
 import BestItemComponent from "../components/BestItemComponent.vue";
 import PageTitleComponent from "../components/PageTitleComponent.vue";
+import navigateMixin from "../mixins/navigate";
 
 export default {
   components: { NavbarComponent, BestItemComponent, PageTitleComponent },
@@ -103,8 +103,14 @@ export default {
   },
   computed: {
     bestsellers() {
-      return this.$store.getters.getItem.bestsellers;
+      return this.$store.getters.getBestSellers;
     },
   },
+  data() {
+    return {
+      name: "hero",
+    };
+  },
+  mixins: [navigateMixin],
 };
 </script>
