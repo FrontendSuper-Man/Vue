@@ -2,7 +2,7 @@
   <div :class="classItem" @click="onEmmit(card.id)">
     <img :src="card.img" alt="coffee" />
     <div class="best__item-title">{{ card.name }}</div>
-    <div class="shop__item-country">Brazil</div>
+    <div class="shop__item-country">{{ card.country }}</div>
     <div class="best__item-price">{{ card.price }}$</div>
   </div>
 </template>

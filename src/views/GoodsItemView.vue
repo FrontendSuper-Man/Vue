@@ -66,7 +66,6 @@ export default {
   },
   computed: {
     pageName() {
-      console.log(this.$route.name);
       return this.$route.name;
     },
     card() {
@@ -89,7 +88,6 @@ export default {
     fetch(`http://localhost:3000/${this.pageName}/${this.$route.params.id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         this.product = data;
       });
   },

@@ -81,7 +81,6 @@ export default {
     fetch("http://localhost:3000/goods")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         this.$store.dispatch("setGoodsData", data);
       });
   },
